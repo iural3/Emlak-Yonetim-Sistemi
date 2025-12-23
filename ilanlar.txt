@@ -1,0 +1,4 @@
+DAIRE,5,DAİRE,1500000.0,jkn,bh,Merkez,85.0,3,12,26
+MUSTAKILEV,6,VİLLA,1600000.0,jkb,kv,kjb,150.0,5,4,26
+ARSA,7,ARSA,7000000.0,hkk,hkhk,Merkez,700.0,0,0,26
+ARSA,1,ARSA,1500000.0,hatay,antakya,Merkez,160.0,0,0,27

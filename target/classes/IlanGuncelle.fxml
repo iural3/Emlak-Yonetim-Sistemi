@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@style.css"
+            fx:controller="Main.Ui.IlanGuncelleController"
+            prefWidth="550" prefHeight="650">
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <VBox spacing="15">
+                <padding>
+                    <Insets top="30" right="30" bottom="30" left="30"/>
+                </padding>
+
+                <Label text="İLAN GÜNCELLEME" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                <Separator/>
+
+                <VBox spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 15; -fx-background-radius: 5;">
+                    <Label text="Hangi ilanı güncellemek istiyorsunuz?" style="-fx-font-weight: bold;"/>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="İLAN NO:"/>
+                        <TextField fx:id="txtIlanNo" promptText="Örn: 101" prefWidth="150"/>
+                        <Button fx:id="btnGetir" text="İlanı Getir"
+                                style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-cursor: hand;"/>
+                    </HBox>
+                </VBox>
+
+                <Label text="Yeni Bilgiler (Değişmeyecek alanları boş bırakınız):" style="-fx-font-weight: bold; -fx-text-fill: #666;"/>
+
+                <GridPane vgap="12" hgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="100" prefWidth="120" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+
+                    <Label text="Yeni Başlık:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtYeniBaslik" promptText="Yeni başlık..." GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Yeni Fiyat:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtYeniFiyat" promptText="Yeni fiyat (TL)" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Yeni İl:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtYeniIl" promptText="İl" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Yeni İlçe:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtYeniIlce" promptText="İlçe" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Yeni Mahalle:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtYeniMahalle" promptText="Mahalle" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <Label text="Metrekare:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtYeniMetrekare" promptText="Örn: 120" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                    <Label text="Oda Sayısı:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtYeniOda" promptText="Örn: 3" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                    <Label text="Kat Sayısı:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtYeniKat" promptText="Örn: 2" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Separator/>
+
+                <Button fx:id="btnGuncelle" text="GÜNCELLEMEYİ KAYDET"
+                        style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-cursor: hand;"
+                        maxWidth="Infinity" prefHeight="45"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

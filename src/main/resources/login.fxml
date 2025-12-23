@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="rootPane"
+           prefHeight="900.0"
+           prefWidth="600.0"
+           xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="Main.Ui.LoginController">
+
+    <children>
+
+        <ImageView fitWidth="${rootPane.width}"
+                   fitHeight="${rootPane.height}"
+                   preserveRatio="false">
+            <image>
+                <Image url="/images/arkaplan.jpg"/>
+            </image>
+        </ImageView>
+
+        <HBox alignment="CENTER">
+            <StackPane.margin>
+                <Insets top="350.0"/>
+            </StackPane.margin>
+
+            <ImageView fx:id="leftDoor"
+                       fitWidth="180"
+                       fitHeight="400"
+                       preserveRatio="false">
+                <image>
+                    <Image url="/images/kapi_sol.png"/>
+                </image>
+            </ImageView>
+
+            <ImageView fx:id="rightDoor"
+                       fitWidth="180"
+                       fitHeight="400"
+                       preserveRatio="false">
+                <image>
+                    <Image url="/images/kapi_sag.png"/>
+                </image>
+            </ImageView>
+        </HBox>
+
+        <VBox fx:id="loginForm"
+              alignment="CENTER"
+              prefWidth="360"
+              maxWidth="360"
+              minWidth="360"
+              spacing="15">
+
+            <StackPane.margin>
+                <Insets top="350.0"/>
+            </StackPane.margin>
+
+            <padding>
+                <Insets top="50"
+                        bottom="20"
+                        left="40"
+                        right="40"/>
+            </padding>
+
+            <Label text="Giriş Yap"
+                   textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24"/>
+                </font>
+                <effect>
+                    <DropShadow radius="2" offsetX="1" offsetY="1" color="BLACK"/>
+                </effect>
+            </Label>
+
+            <TextField fx:id="txtTc"
+                       promptText="TC Kimlik No"
+                       style="-fx-background-radius: 5; -fx-background-color: white;"/>
+
+            <TextField fx:id="txtUser"
+                       promptText="Kullanıcı Adı"
+                       style="-fx-background-radius: 5; -fx-background-color: white;"/>
+
+            <TextField fx:id="txtEmail"
+                       promptText="E-Posta"
+                       style="-fx-background-radius: 5; -fx-background-color: white;"/>
+
+            <PasswordField fx:id="txtPass"
+                           promptText="Şifre"
+                           style="-fx-background-radius: 5; -fx-background-color: white;"/>
+
+            <Label fx:id="lblError"
+                   textFill="#ffcccc">
+                <font>
+                    <Font name="System Bold" size="12"/>
+                </font>
+                <effect>
+                    <DropShadow radius="1" color="BLACK"/>
+                </effect>
+            </Label>
+
+            <Button fx:id="btnLogin"
+                    text="Giriş Yap"
+                    onAction="#handleLoginButton"
+                    style="-fx-background-color:#2c3e50; -fx-text-fill:white; -fx-background-radius: 5; -fx-font-weight: bold;">
+                <padding>
+                    <Insets top="10" right="30" bottom="10" left="30"/>
+                </padding>
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+            </Button>
+        </VBox>
+
+        <StackPane fx:id="effectPane" opacity="0.0" mouseTransparent="true">
+
+            <StackPane.margin>
+                <Insets top="350.0"/>
+            </StackPane.margin>
+
+            <children>
+
+                <Circle fx:id="lightBurst"
+                        fill="WHITE"
+                        radius="100.0">
+                    <effect>
+                        <GaussianBlur radius="80.0">
+                            <input>
+                                <Glow level="1.0"/>
+                            </input>
+                        </GaussianBlur>
+                    </effect>
+                </Circle>
+
+                <Pane fx:id="confettiPane"
+                      maxWidth="600"
+                      maxHeight="600"
+                      mouseTransparent="true"/>
+
+                <Text fx:id="welcomeText"
+                      text="HOŞ GELDİNİZ!"
+                      fill="WHITE"
+                      opacity="0.0">
+                    <font>
+                        <Font size="42"/>
+                    </font>
+                    <effect>
+                        <DropShadow radius="15"/>
+                    </effect>
+                </Text>
+
+            </children>
+        </StackPane>
+
+    </children>
+</StackPane>
